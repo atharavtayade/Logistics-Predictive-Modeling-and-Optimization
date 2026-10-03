@@ -1,0 +1,175 @@
+{
+    "metadata": {
+        "document_ref": "LOG-ML-OPT-2026-T4",
+        "timestamp": "2026-10-04 02:30:34",
+        "execution_duration_sec": 29.48
+    },
+    "dataset_statistics": {
+        "total_records": 15000,
+        "num_features_engineered": 42,
+        "sla_breach_rate": 0.0437,
+        "mean_transit_hours": 19.97,
+        "std_transit_hours": 13.13
+    },
+    "model_leaderboard": [
+        {
+            "Model Tier": "Tier 3A: LightGBM Regressor",
+            "CV RMSE (hrs)": 3.436,
+            "CV MAE (hrs)": 2.265,
+            "CV R2": 0.9314,
+            "CV MedAE (hrs)": 1.421,
+            "CV MAPE (%)": 11.49,
+            "SLA ROC-AUC": 0.92,
+            "SLA Brier Score": 0.0294,
+            "SLA F1-Score": 0.473
+        },
+        {
+            "Model Tier": "Tier 3B: XGBoost Regressor",
+            "CV RMSE (hrs)": 3.46,
+            "CV MAE (hrs)": 2.267,
+            "CV R2": 0.9305,
+            "CV MedAE (hrs)": 1.402,
+            "CV MAPE (%)": 11.39,
+            "SLA ROC-AUC": 0.9156,
+            "SLA Brier Score": 0.0296,
+            "SLA F1-Score": 0.5037
+        },
+        {
+            "Model Tier": "Tier 2: Random Forest Regressor",
+            "CV RMSE (hrs)": 3.579,
+            "CV MAE (hrs)": 2.367,
+            "CV R2": 0.9256,
+            "CV MedAE (hrs)": 1.467,
+            "CV MAPE (%)": 11.93,
+            "SLA ROC-AUC": 0.9038,
+            "SLA Brier Score": 0.0319,
+            "SLA F1-Score": 0.4111
+        },
+        {
+            "Model Tier": "Tier 1: Ridge Regression (Baseline)",
+            "CV RMSE (hrs)": 4.275,
+            "CV MAE (hrs)": 2.99,
+            "CV R2": 0.8939,
+            "CV MedAE (hrs)": 2.2,
+            "CV MAPE (%)": 21.26,
+            "SLA ROC-AUC": 0.8435,
+            "SLA Brier Score": 0.0357,
+            "SLA F1-Score": 0.2926
+        }
+    ],
+    "top_features": [
+        {
+            "feature": "route_distance_km",
+            "gini_importance_pct": 7.333333333333333,
+            "mean_abs_shap": 6.196521662469068
+        },
+        {
+            "feature": "diurnal_congestion_coef",
+            "gini_importance_pct": 7.986666666666667,
+            "mean_abs_shap": 1.936519508833341
+        },
+        {
+            "feature": "radial_distance_km",
+            "gini_importance_pct": 6.453333333333333,
+            "mean_abs_shap": 1.6546477402581645
+        },
+        {
+            "feature": "total_dwell_hours",
+            "gini_importance_pct": 8.28,
+            "mean_abs_shap": 1.4567906225921154
+        },
+        {
+            "feature": "carrier_tier_EXPRESS_COURIER",
+            "gini_importance_pct": 2.3333333333333335,
+            "mean_abs_shap": 1.1428263288608251
+        },
+        {
+            "feature": "carrier_tier_LTL_FREIGHT",
+            "gini_importance_pct": 2.48,
+            "mean_abs_shap": 0.8394844460357282
+        },
+        {
+            "feature": "toll_booths_count",
+            "gini_importance_pct": 3.44,
+            "mean_abs_shap": 0.7223178046002915
+        },
+        {
+            "feature": "weather_congestion_interaction",
+            "gini_importance_pct": 4.8533333333333335,
+            "mean_abs_shap": 0.4769704809968319
+        },
+        {
+            "feature": "carrier_tier_STANDARD_PARCEL",
+            "gini_importance_pct": 1.1466666666666667,
+            "mean_abs_shap": 0.3153058797665672
+        },
+        {
+            "feature": "origin_dwell_hours",
+            "gini_importance_pct": 4.24,
+            "mean_abs_shap": 0.21457594918641326
+        }
+    ],
+    "residual_diagnostics": {
+        "Residual Mean": -0.0027,
+        "Residual Std": 3.4365,
+        "Skewness": 0.6527,
+        "Kurtosis": 6.3984,
+        "BP_LM_Stat": 3749.18,
+        "BP_P_Value": 0.0,
+        "Heteroscedastic": true
+    },
+    "cvrptw_optimization": {
+        "active_vehicles": 4,
+        "baseline_vehicles": 4,
+        "optimized_distance_km": 449.55,
+        "baseline_distance_km": 868.38,
+        "distance_reduction_pct": 48.2,
+        "time_reduction_pct": 19.5,
+        "fuel_saved_liters": 48.17,
+        "co2_saved_kg": 129.08,
+        "avg_weight_utilization_pct": 70.7,
+        "avg_volume_utilization_pct": 82.2,
+        "routes_summary": [
+            {
+                "vehicle_id": 1,
+                "stops": 6,
+                "distance_km": 127.68,
+                "duration_min": 317,
+                "weight_kg": 1460,
+                "volume_m3": 4.99,
+                "weight_util_pct": 91.2,
+                "volume_util_pct": 58.7
+            },
+            {
+                "vehicle_id": 2,
+                "stops": 7,
+                "distance_km": 73.54,
+                "duration_min": 305,
+                "weight_kg": 1102,
+                "volume_m3": 8.17,
+                "weight_util_pct": 68.9,
+                "volume_util_pct": 96.1
+            },
+            {
+                "vehicle_id": 3,
+                "stops": 7,
+                "distance_km": 114.91,
+                "duration_min": 362,
+                "weight_kg": 864,
+                "volume_m3": 7.18,
+                "weight_util_pct": 54.0,
+                "volume_util_pct": 84.5
+            },
+            {
+                "vehicle_id": 4,
+                "stops": 6,
+                "distance_km": 133.42,
+                "duration_min": 441,
+                "weight_kg": 1101,
+                "volume_m3": 7.6,
+                "weight_util_pct": 68.8,
+                "volume_util_pct": 89.4
+            }
+        ]
+    }
+}
